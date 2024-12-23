@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommended Schedule</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Recommended Schedule</h1>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Time Slot</th>
+            <th>Actions</th>
+        </tr>
+        {% for task, time_slot in schedule %}
+        <tr>
+            <td>{{ task[2] }}</td>  <!-- Task description -->
+            <td>{{ time_slot }}</td>
+            <td><button>Edit</button></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

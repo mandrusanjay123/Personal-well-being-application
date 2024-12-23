@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Scheduling</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- Flash message display -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <h1>Task Scheduling</h1>
+    <form method="post" action="{{ url_for('task_page') }}">
+        <label>Task Type:</label>
+        <input type="text" name="task_type" required><br>
+        
+        <label>Estimated Time (hours):</label>
+        <input type="number" name="estimated_time" required><br>
+        
+        <label>Stress Level (1-5):</label>
+        <input type="number" name="stress_level" required min="1" max="5"><br>
+        
+        <label>Priority (1-5):</label>
+        <input type="number" name="priority" required min="1" max="5"><br>
+        
+        <label>Urgency (1-5):</label>
+        <input type="number" name="urgency" required min="1" max="5"><br>
+        
+        <button type="submit">Save Task</button>
+    </form>
+</body>
+</html>
