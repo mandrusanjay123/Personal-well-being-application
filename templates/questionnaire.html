@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Initial Questionnaire</h1>
+    <form method="post" action="{{ url_for('assign_cluster') }}">
+        <label>How many hours can you dedicate to study/work daily?</label>
+        <input type="number" name="hours_per_day" required><br>
+        <label>When do you feel most productive?</label>
+        <select name="productive_time" required>
+            <option value="morning">Morning</option>
+            <option value="afternoon">Afternoon</option>
+            <option value="evening">Evening</option>
+        </select><br>
+        <label>How frequently do you prefer breaks?</label>
+        <select name="break_frequency" required>
+            <option value="often">Often</option>
+            <option value="sometimes">Sometimes</option>
+            <option value="rarely">Rarely</option>
+        </select><br>
+        <label>Do you engage in physical activities or wellness activities daily?</label>
+        <select name="wellness_activities" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
