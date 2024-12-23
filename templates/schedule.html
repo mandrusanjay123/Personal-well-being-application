@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommended Schedule</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Recommended Schedule</h1>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Time Slot</th>
+            <th>Priority Score</th>
+        </tr>
+        {% for item in schedule %}
+        <tr>
+            <td>{{ item.task }}</td>
+            <td>{{ item.time_slot }}</td>
+    
+            <td>{{ item.priority_score }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

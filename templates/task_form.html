@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Scheduling</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Add a Task</h1>
+    <form method="post" action="{{ url_for('task_page') }}">
+        <label>Task Name:</label>
+        <input type="text" name="task_name" required><br>
+        
+        <label>Deadline:</label>
+        <input type="date" name="deadline" required><br>
+        
+        <label>Stress Level (1-5):</label>
+        <input type="number" name="stress_level" required><br>
+        
+        <label>Category:</label>
+        <input type="text" name="category" required><br>
+        
+        <label>Estimated Completion Time (hours):</label>
+        <input type="number" name="estimated_time" required><br>
+        
+        <button type="submit">Save Task</button>
+    </form>
+</body>
+</html>
