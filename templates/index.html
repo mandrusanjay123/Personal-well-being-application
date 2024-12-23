@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Initial Assessment</title>
+</head>
+<body>
+    <h1>Initial Assessment</h1>
+    <form action="{{ url_for('task_page') }}" method="post">
+        <input type="hidden" name="user_id" value="1"> <!-- Temporary user ID -->
+        <button type="submit">Go to Task Scheduling</button>
+    </form>
+</body>
+</html>
